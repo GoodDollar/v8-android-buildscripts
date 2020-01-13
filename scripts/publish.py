@@ -48,7 +48,7 @@ def main():
         if os.path.exists(distdir):
             shutil.rmtree(distdir)
         shutil.move(source_dir_in_tar_file, distdir)
-        cmds = ['npm', 'publish', '--tag', args.tag]
+        cmds = ['npm', 'publish', '--access', 'public', '--tag', args.tag]
         if args.dry_run:
             cmds.append('--dry-run')
         subprocess.run(cmds, cwd=cwd)
